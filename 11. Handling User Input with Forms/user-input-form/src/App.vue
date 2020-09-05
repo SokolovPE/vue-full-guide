@@ -22,8 +22,9 @@
                             type="password"
                             id="password"
                             class="form-control"
-                            v-model="userData.password"
+                            v-model.lazy="userData.password"
                         />
+                        <p>{{ userData.password }}</p>
                     </div>
                     <div class="form-group">
                         <label for="age">Age</label>
