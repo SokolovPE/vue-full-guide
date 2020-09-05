@@ -1,0 +1,32 @@
+<script src="https://unpkg.com/vue/dist/vue.js">
+</script>
+
+<div id="app">
+    <!-- Regular loop -->
+    <ul>
+        <!-- <li v-for="(ingredient, i) in ingredients">{{ ingredient }} ({{ i }})</li> -->
+        <li v-for="(ingredient, i) in ingredients" :key="">{{ ingredient }} ({{ i }})</li>
+    </ul>
+    <button @click="ingredients.push('spices')">Add New</button>
+    <hr>
+    <!-- Loop through object -->
+    <ul>
+        <li v-for="person in persons">
+            <div v-for="(value, key, index) in person">
+                {{ key }}: {{ value }} ({{ index }})
+            </div>
+        </li>
+    </ul>
+    <!-- Loop through numbers -->
+    <span v-for="n in 10">{{ n }}</span>
+    <hr>
+    <!-- Alternative v-for for non-nested elements -->
+    <template v-for="(ingredient, index) in ingredients">
+        <h1>{{ ingredient }}</h1>
+        <p>{{ index }}</p>
+    </template>
+</div>
+
+
+<script src="index.js">
+</script>

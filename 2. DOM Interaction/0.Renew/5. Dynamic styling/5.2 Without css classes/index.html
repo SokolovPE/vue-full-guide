@@ -1,0 +1,16 @@
+<script src="https://unpkg.com/vue/dist/vue.js">
+</script>
+
+<div id="app">
+    <div class="demo" :style="{backgroundColor: color}"></div>
+    <div class="demo" :style="myStyle"></div>
+    <div class="demo" :style="[myStyle, {height: `${width}px`}]"></div>
+    <hr>
+    <input type="text" v-model ="color">
+    <input type="text" v-model ="width">
+</div>
+
+<script src="index.js">
+</script>
+
+<link rel="stylesheet" href="index.css">

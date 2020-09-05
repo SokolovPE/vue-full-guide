@@ -1,0 +1,16 @@
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="app">
+    <p v-if="show">You can see me!</p>
+    <p v-else>Now you can see me!</p>
+    <!-- alternative -->
+    <template v-if="show">
+        <h1>Heading</h1>
+        <span>Inside a template</span>
+    </template>
+
+    <p v-show="show">Do you also see me?</p>
+    <button @click="show = !show">Switch</button>
+</div>
+
+<script src="main.js"></script>

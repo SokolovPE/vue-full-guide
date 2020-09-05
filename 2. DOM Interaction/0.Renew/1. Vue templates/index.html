@@ -1,0 +1,13 @@
+<script src="https://unpkg.com/vue/dist/vue.js">
+</script>
+
+<div id="app">
+    <h1 v-once>{{ title }}</h1>
+    <p>{{ sayHello() }} - <a :href="link">Google</a></p>
+    <hr>
+    <p v-html="finishedLink"></p>
+</div>
+
+
+<script src="index.js">
+</script>

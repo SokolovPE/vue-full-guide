@@ -1,0 +1,78 @@
+Options os Vue instance:
+el - connect to dom
+data - store data to be used
+methods - methods of this vue instance
+computed - dependent properties (should be used in most times)
+watch - execute code upon data changes (can use async tasks here)
+
+Shortcuts:
+v-on:click = @click
+v-bind:href = :href
+
+Directives:
+v-on - bind handler to event.
+Example: <input v-on:input="changeTitle">
+
+v-bind - same as {{ prop }}, binds models property to html.
+Example: <a v-bind:href="link">Google</a>
+
+v-once - bind to initial value, only once. 
+Element will be rendered once, and won't be updated with model changes.
+Example: <h1 v-once>{{ title }}</h1>
+
+v-html - render element from property that stores HTML code.
+Example: <p v-html="finishedLink"></p>
+data.finishedLink: '<a href="http://google.com">Google</a>'
+
+v-for - render element for each item in list.
+Example: 
+v-for="item in list"
+v-for="(item, index) in list" - if index is required
+v-for="(value, key, index) in person" - if looping through Objects
+v-for="n in 10" - loop through 1..10
+v-for="(ingredient, i) in ingredients" :key="ingredient" - store by key, not position
+
+v-model - Data binding.
+Example:
+v-model="property" - binds to some property.
+
+parameters:
+If method has no parameter like 
+<button v-on:click="increase">Click me</button>
+then event will be automatically passed to function 
+increase: function(event){}
+
+If needed to use parameters, and still get info from event data, then it can be used liek this:
+<button v-on:click="increase(2, $event)">Click me</button>
+increase: function(step, event) {};
+
+event.stopPropagation() - means to handle event of this element only by this handler. 
+Not by parent element handlers.
+Same in vue: .stop - stop modifier
+v-on:mousemove.stop=""
+.prevent - preventDefault()
+https://vuejs.org/v2/guide/events.html#Event-Modifiers
+
+Key modifiers:
+
+https://vuejs.org/v2/guide/events.html#Key-Modifiers
+
+
+Also can be used simple JS with no loops, condifitons and etc.
+<button v-on:click="counter++">Click me too</button>
+<p>{{ counter > 10 ? 'Greater than 10' : 'Smaller than 10' }}</p>
+
+
+CSS:
+:style="{backgroundColor}"
+camelCase is same for 'background-color'
+--
+https://medium.com/@modex13/vue-js-2-%D1%81%D0%B1%D0%BE%D1%80%D0%BD%D0%B8%D0%BA-%D0%BC%D0%B5%D0%BB%D0%BA%D0%B8%D1%85-%D1%81%D0%BE%D0%B2%D0%B5%D1%82%D0%BE%D0%B2-6e9897cf3d37
+
+Conditions:
+v-if - attach or not attach element. 
+If element not shown it's not hidden, it's just removed.
+v-show - hide/show on condition.
+
+
+<template> tag is not rendered to the DOM. Used to group elements.
