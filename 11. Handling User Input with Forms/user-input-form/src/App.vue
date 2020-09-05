@@ -9,7 +9,12 @@
                     <hr />
                     <div class="form-group">
                         <label for="email">Mail</label>
-                        <input type="text" id="email" class="form-control" />
+                        <input
+                            type="text"
+                            id="email"
+                            class="form-control"
+                            v-model="email"
+                        />
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
@@ -103,7 +108,7 @@
                         <h4>Your Data</h4>
                     </div>
                     <div class="panel-body">
-                        <p>Mail:</p>
+                        <p>Mail: {{ email }}</p>
                         <p>Password:</p>
                         <p>Age:</p>
                         <p>Message:</p>
@@ -122,7 +127,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+    data() {
+        return {
+            email: ''
+        };
+    }
+};
 </script>
 
 <style></style>
