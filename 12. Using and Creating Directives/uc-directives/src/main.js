@@ -4,8 +4,9 @@ import App from './App.vue';
 Vue.config.productionTip = false;
 
 Vue.directive('highlight', {
-    bind(el /*, binding, vnode*/) {
-        el.style.backgroundColor = 'green';
+    bind(el, binding /*, vnode*/) {
+        //el.style.backgroundColor = 'green';
+        el.style.backgroundColor = binding.value;
     }
 });
 
