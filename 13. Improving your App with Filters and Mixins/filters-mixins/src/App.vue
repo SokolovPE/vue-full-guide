@@ -22,20 +22,12 @@
 
 <script>
 import List from '@/components/List.vue';
+import { fruitMixin } from '@/mixins/fruitMixin';
 export default {
     data() {
         return {
-            text: 'Hello there!',
-            fruits: ['Apple', 'Banana', 'Mango', 'Melon'],
-            filterText: ''
+            text: 'Hello there!'
         };
-    },
-    computed: {
-        filteredFruits() {
-            return this.fruits.filter(element =>
-                element.toLowerCase().match(this.filterText)
-            );
-        }
     },
     filters: {
         toUpperCase(value) {
@@ -44,7 +36,8 @@ export default {
     },
     components: {
         'list-comp': List
-    }
+    },
+    mixins: [fruitMixin]
 };
 </script>
 
