@@ -13,12 +13,15 @@
                         {{ fruit }}
                     </li>
                 </ul>
+                <hr />
+                <list-comp />
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import List from '@/components/List.vue';
 export default {
     data() {
         return {
@@ -38,6 +41,9 @@ export default {
         toUpperCase(value) {
             return value.toUpperCase();
         }
+    },
+    components: {
+        'list-comp': List
     }
 };
 </script>
