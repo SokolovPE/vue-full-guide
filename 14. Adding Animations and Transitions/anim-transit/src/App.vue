@@ -31,4 +31,21 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.fade-enter {
+    opacity: 0;
+}
+
+.fade-enter-active {
+    transition: opacity 1s;
+}
+
+.fade-leave {
+    /* opacity: 1; */
+}
+
+.fade-leave-active {
+    transition: opacity 1s;
+    opacity: 0;
+}
+</style>
