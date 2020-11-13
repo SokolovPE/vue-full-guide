@@ -6,6 +6,7 @@
             >
                 <h1>Routing</h1>
                 <hr />
+                <my-header />
                 <router-view></router-view>
             </div>
         </div>
@@ -13,7 +14,12 @@
 </template>
 
 <script>
-export default {};
+import Header from '@/components/Header.vue';
+export default {
+    components: {
+        myHeader: Header
+    }
+};
 </script>
 
 <style></style>
