@@ -1,7 +1,6 @@
 <template>
     <div>
         <p>Please select a User</p>
-        <hr />
         <ul class="list-group">
             <router-link
                 class="list-group-item"
