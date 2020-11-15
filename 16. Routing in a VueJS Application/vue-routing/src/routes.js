@@ -16,7 +16,11 @@ export const routes = [
                 path: ':id/edit',
                 component: UserEdit,
                 name: 'userEdit',
-                props: true
+                props: route => ({
+                    id: route.params.id,
+                    locale: route.query.locale,
+                    analytics: route.query.q
+                })
             }
         ]
     }

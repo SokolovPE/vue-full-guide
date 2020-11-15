@@ -1,11 +1,21 @@
 <template>
-    <h3>Edit User {{ id }}</h3>
+    <div>
+        <h3>Edit User {{ id }}</h3>
+        <p>Locale: {{ locale }}</p>
+        <p>Analytics: {{ analytics }} ({{ $route.query.q }})</p>
+    </div>
 </template>
 
 <script>
 export default {
     props: {
         id: {
+            type: Number
+        },
+        locale: {
+            type: String
+        },
+        analytics: {
             type: Number
         }
     }
