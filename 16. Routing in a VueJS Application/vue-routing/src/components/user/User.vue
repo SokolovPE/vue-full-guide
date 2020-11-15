@@ -2,6 +2,7 @@
     <div>
         <h1>The User Page</h1>
         <hr />
+        <p>Loaded ID: {{ id }}</p>
         <!-- This is how it's done by button with handler. -->
         <button class="btn btn-primary" @click="navigateToHome">
             Go to Home
@@ -16,6 +17,21 @@
 
 <script>
 export default {
+    props: {
+        id: {
+            type: Number
+        }
+    },
+    // data() {
+    //     return {
+    //         id: this.$route.params.id
+    //     };
+    // },
+    // watch: {
+    //     $route(to) {
+    //         this.id = to.params.id;
+    //     }
+    // },
     methods: {
         navigateToHome() {
             this.$router.push('/');
