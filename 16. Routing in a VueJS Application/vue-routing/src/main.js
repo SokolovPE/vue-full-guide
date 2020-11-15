@@ -26,6 +26,18 @@ const router = new VueRouter({
     }
 });
 
+//* Executes before each routing action.
+router.beforeEach((to, from, next) => {
+    console.log('Global beforeEach');
+    //* If next is called - route allowed, if no such line - not allowed.
+    next();
+    //* Means abort goinf to the route, stay at the page it came from.
+    //next(false);
+    //* Can navigate to specific route.
+    //next('/home');
+    //next({ name: 'home' });
+});
+
 new Vue({
     router: router,
     render: h => h(App)

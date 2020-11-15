@@ -19,6 +19,12 @@ export default {
                 hash: '#data'
             }
         };
+    },
+    beforeRouteEnter(to, from, next) {
+        console.log('Component beforeRouteEnter');
+        //! We can't access any property from data here, because component wasn't created yet.
+        //* If we call next we finally load this component.
+        next();
     }
 };
 </script>
