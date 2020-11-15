@@ -6,8 +6,10 @@
             >
                 <h1>Routing</h1>
                 <hr />
-                <my-header />
+                <router-view name="header-top"></router-view>
                 <router-view></router-view>
+                <hr />
+                <router-view name="header-bottom"></router-view>
             </div>
         </div>
     </div>
