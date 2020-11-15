@@ -9,7 +9,7 @@
         </button>
         <!-- This is how it's dont by router-link. -->
         <router-link
-            to="/"
+            :to="{ name: 'home' }"
             tag="button"
             class="btn btn-primary"
             style="margin-left: 10px"
@@ -22,7 +22,7 @@
 export default {
     methods: {
         navigateToHome() {
-            this.$router.push('/');
+            this.$router.push({ name: 'home' });
         }
     }
 };

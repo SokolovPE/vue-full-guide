@@ -7,7 +7,7 @@
                 style="cursor: pointer"
                 v-for="user in users"
                 :key="user.id"
-                :to="'/user/' + user.id"
+                :to="{ name: 'userDetail', params: { id: user.id } }"
                 tag="li"
                 >User {{ user.id }}</router-link
             >
