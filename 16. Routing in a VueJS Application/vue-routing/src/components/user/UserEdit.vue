@@ -4,7 +4,7 @@
         <p>Locale: {{ locale }}</p>
         <p>Analytics: {{ analytics }} ({{ $route.query.q }})</p>
         <hr />
-        <button class="btn btn-primary">
+        <button class="btn btn-primary" @click="confirmed = true">
             Confirm
         </button>
         <div style="height: 700px"></div>
@@ -23,6 +23,24 @@ export default {
         },
         analytics: {
             type: Number
+        }
+    },
+    data() {
+        return {
+            confirmed: false
+        };
+    },
+    beforeRouteLeave(to, from, next) {
+        //* In beforeLeave we have access to component's data;
+        if (this.confirmed) {
+            next();
+        } else {
+            if (confirm('Are you sure?')) {
+                next();
+            } else {
+                //* Abort the navigation.
+                next(false);
+            }
         }
     }
 };
