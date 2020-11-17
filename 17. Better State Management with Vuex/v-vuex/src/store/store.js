@@ -25,6 +25,6 @@ export const store = new Vuex.Store({
         ...sharedActions
     },
     modules: {
-        counter
+        appCounter: counter
     }
 });

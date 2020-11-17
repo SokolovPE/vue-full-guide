@@ -19,7 +19,7 @@
 import { mapActions } from 'vuex';
 export default {
     methods: {
-        ...mapActions('counter',['asyncIncrement', 'asyncDecrement'])
+        ...mapActions('appCounter', ['asyncIncrement', 'asyncDecrement'])
     }
 };
 </script>

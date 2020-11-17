@@ -13,7 +13,7 @@
 import { mapMutations } from 'vuex';
 export default {
     methods: {
-        ...mapMutations('counter',['increment', 'decrement'])
+        ...mapMutations('appCounter', ['increment', 'decrement'])
     }
 };
 </script>

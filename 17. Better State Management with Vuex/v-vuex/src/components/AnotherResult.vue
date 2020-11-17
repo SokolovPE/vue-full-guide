@@ -10,7 +10,7 @@ import { mapGetters } from 'vuex';
 //import * as types from '../store/types';
 export default {
     computed: {
-        ...mapGetters('counter', {
+        ...mapGetters('appCounter', {
             counter: 'doubleCounter',
             clicks: 'stringCounter'
         }),
