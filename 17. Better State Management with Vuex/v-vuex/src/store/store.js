@@ -2,7 +2,12 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 
 import counter from './modules/counter';
-
+//* Load only actions I want.
+// import { updateValue } from './actions';
+//* Load all and create an object of them.
+import * as sharedActions from './actions';
+import * as sharedGetters from './getters';
+import * as sharedMutations from './mutations';
 Vue.use(Vuex);
 
 export const store = new Vuex.Store({
@@ -11,19 +16,13 @@ export const store = new Vuex.Store({
         value: 0
     },
     getters: {
-        value: state => {
-            return state.value;
-        }
+        ...sharedGetters
     },
     mutations: {
-        updateValue: (state, payload) => {
-            state.value = payload;
-        }
+        ...sharedMutations
     },
     actions: {
-        updateValue: ({ commit }, payload) => {
-            commit('updateValue', payload);
-        }
+        ...sharedActions
     },
     modules: {
         counter
