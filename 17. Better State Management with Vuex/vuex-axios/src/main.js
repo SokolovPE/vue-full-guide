@@ -5,6 +5,14 @@ import App from './App.vue';
 
 import { store } from './store/store';
 
+//* Fonts and icons
+import 'argon-design-system-free/assets/css/argon-design-system.css';
+import 'argon-design-system-free/assets/css/nucleo-icons.css';
+//* Nucleo Icons
+import 'argon-design-system-free/assets/css/nucleo-svg.css';
+import 'argon-design-system-free/assets/css/font-awesome.css';
+
+//* Scripts.
 Vue.config.productionTip = false;
 
 Vue.use(VueAxios, axios);

@@ -1,53 +1,17 @@
 <template>
     <div id="app">
         <img alt="Vue logo" src="./assets/logo.png" />
-        <ul>
-            <li v-for="todo in todos" :key="todo.id">{{ todo.title }}</li>
-        </ul>
-        <hr />
-        <div>
-            <input id="new-todo" type="text" v-model="newTodo" />
-            <button class="btn btn-primary" @click="pushTodo">
-                Add a new Todo
-            </button>
-            <button class="btn btn-primary" @click="removeTodo(todos[0])">
-                Pop Todo
-            </button>
-        </div>
-        <!-- <button class="btn btn-primary" @click="setTodos(todos)">
-            Save changes
-        </button> -->
+        <edit-cats></edit-cats>
     </div>
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import CategoriesEdit from '@/components/admin/categories/CategoriesEdit.vue';
 
 export default {
     name: 'App',
-    data() {
-        return {
-            newTodo: ''
-        };
-    },
-    computed: {
-        ...mapGetters('todo', { todos: 'getTodos' })
-    },
-    methods: {
-        ...mapActions('todo', [
-            'setTodos',
-            'fetchTodos',
-            'addTodo',
-            'removeTodo'
-        ]),
-        pushTodo() {
-            this.addTodo(this.newTodo).then(() => {
-                this.newTodo = '';
-            });
-        }
-    },
-    mounted() {
-        this.fetchTodos();
+    components: {
+        'edit-cats': CategoriesEdit
     }
 };
 </script>
